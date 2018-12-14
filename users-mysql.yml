@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: users-mysql.example.com
+  labels:
+    app: users-mysql
+spec:
+  containers:
+  - name: users-mysql
+    image: carlospa/kubernetes
+    ports:
+    - name: users-mysql-port
+      containerPort: 8086

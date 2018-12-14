@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: users-mysqlrc
+spec:
+  replicas: 2
+  selector:
+    app: users-mysql
+  template:
+    metadata:
+      labels:
+        app: users-mysql
+    spec:
+      containers:
+      - name: users-mysql
+        image: carlospa/kubernetes
+        ports:
+        - name: users-mysqlpt
+          containerPort: 8086
+        livenessProbe:
+          httpGet:
+            path: /all/
+            port: users-mysqlpt
+          initialDelaySeconds: 15
+          timeoutSeconds: 30

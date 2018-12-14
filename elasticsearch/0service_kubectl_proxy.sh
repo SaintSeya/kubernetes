@@ -1,0 +1,1 @@
+nohup kubectl proxy & 

@@ -1,0 +1,21 @@
+# An Ingress with 2 hosts and 3 endpoints
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: users-mysqlrl
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: users-mysqlsvc
+          servicePort: 31002
+  - host: localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: users-mysqlsvc
+          servicePort: 31002

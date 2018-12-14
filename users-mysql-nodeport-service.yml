@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-mysqlsvc
+spec:
+  ports:
+  - port: 31002
+    nodePort: 31002
+    targetPort: users-mysqlpt
+    protocol: TCP
+  selector:
+    app: users-mysql
+  type: NodePort

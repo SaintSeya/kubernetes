@@ -2,7 +2,7 @@
 
 To run the application:
 
-1 - Create a Virtual machine with the follow configuration on AZURE:
+1 - Create a Virtual machine that allows Nested Virtualization. For example in AZURE:
 
 Standard D4 v3 (4 vcpus, 16 GB memory)
 
